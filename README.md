@@ -99,6 +99,6 @@ docker-compose up --build -d
 Run the same exploit script again. The connection to port 8009 is refused.
 No sensitive file content can be read. The vulnerability is patched, normal HTTP web service on port 8080 still works.
 
-![Ghostcat after patch screenshot](./screenshots/ghostcatafter.png)
+![Ghostcat after patch screenshot](./screenshots/ghostcat​after.png)
 
 ![website8080 screenshot](./screenshots/website8080.png)
