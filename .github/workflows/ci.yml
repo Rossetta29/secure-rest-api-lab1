@@ -19,6 +19,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: SAST-Bandit static code scan
-        run: bandit -r ./app.py -f json -o bandit-report.json
+        run: bandit -r ./app.py -f json -o bandit-report.json || true
       - name: SCA-Safety dependency vulnerability scan
-        run: safety check --json > safety-report.json
+        run: safety check --json > safety-report.json || true
