@@ -13,7 +13,7 @@ We also reproduce, analyse and patch a Server-Side Template Injection (SSTI) vul
 
 This Flask API provides user login authentication with JWT session token. It implements basic security controls against common web attacks.
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/website_running.png)
+![website_running screenshot](./screenshots/website_running.png)
 
 ### API Endpoints
 
@@ -35,7 +35,7 @@ This Flask API provides user login authentication with JWT session token. It imp
 - Purpose: Get user profile information, protected by token authentication
 - curl [http://127.0.0.1:5000/api/userinfo/1](http://127.0.0.1:5000/api/userinfo/1) -H "Authorization: Bearer REPLACE_WITH_YOUR_TOKEN"
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/api_curl.png)
+![api_curl screenshot](./screenshots/api_curl.png)
 
 ### Security Controls Implemented
 
@@ -50,7 +50,7 @@ GitHub Actions workflow automatically runs two security scans after each code pu
 1. Bandit: Static Application Security Testing (SAST) for Python source code
 2. Safety: Software Composition Analysis (SCA), scan vulnerable third-party packages.
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/actions_ci.png)
+![actions_ci](./screenshots/actions_ci.png)
 
 ## 2. Vulnerability Analysis: CVE-2020-1938 Apache Tomcat Ghostcat (AJP File Inclusion)
 
@@ -69,7 +69,7 @@ Tomcat’s AJP protocol connector lacks sufficient parameter validation. Attacke
 
 The server returns full content of web.xml, which proves arbitrary file read vulnerability exists.
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/ghostcatbefore.png)
+![Ghostcat before patch screenshot](./screenshots/ghostcatbefore.png)
 
 ### Root Cause Analysis
 
@@ -99,6 +99,6 @@ docker-compose up --build -d
 Run the same exploit script again. The connection to port 8009 is refused.
 No sensitive file content can be read. The vulnerability is patched, normal HTTP web service on port 8080 still works.
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/ghostcatafter.png)
+![Ghostcat after patch screenshot](./screenshots/ghostcatafter.png)
 
-![CI Pipeline screenshot](https://github.com/Rossetta29/secure-rest-api-lab1/tree/main/screenshots/website8080.png)
+![website8080 screenshot](./screenshots/website8080.png)
